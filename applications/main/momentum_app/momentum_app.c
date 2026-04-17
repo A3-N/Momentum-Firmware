@@ -163,7 +163,7 @@ static void
     momentum_app_push_mainmenu_app_raw(MomentumApp* app, FuriString* label, FuriString* exe) {
     CharList_push_back(app->mainmenu_app_exes, strdup(furi_string_get_cstr(exe)));
     // Display logic mimics applications/services/gui/modules/menu.c
-    if(furi_string_equal(label, "Momentum")) {
+    if(furi_string_equal(label, "BornFree")) { // forked from Momentum
         furi_string_set(label, "MNTM");
     } else if(furi_string_equal(label, "125 kHz RFID")) {
         furi_string_set(label, "RFID");
@@ -229,7 +229,7 @@ void momentum_app_load_mainmenu_apps(MomentumApp* app) {
                 } else if(furi_string_equal(line, "SubGHz")) {
                     furi_string_set(line, "Sub-GHz");
                 } else if(furi_string_equal(line, "Xtreme")) {
-                    furi_string_set(line, "Momentum");
+                    furi_string_set(line, "A3-N"); // forked from Momentum
                 }
             }
             momentum_app_push_mainmenu_app(app, line);
